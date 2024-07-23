@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.get('/', function(req, res){
     res.send('Welcome to new server')
@@ -28,6 +28,6 @@ app.get('/', function(req, res){
 
         app.use('/task', taskRoutes);
 
-app.listen(3001, ()=>{
+app.listen(PORT, ()=>{
     console.log('listening on port 3001');
 })
