@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const mongoURL = 'mongodb://127.0.0.1:27017/shops'; // Update 'mydatabase' to your database name
+//Define the Mongodb connection URL
+//const mongoURL = process.env.MONGODB_URL_LOCAL; // Update 'mydatabase' to your database name
+const mongoURL = process.env.MONGODB_URL;
 
 mongoose.connect(mongoURL).then(() => {
     console.log('Connected to MongoDB');
